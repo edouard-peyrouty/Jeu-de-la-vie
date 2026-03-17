@@ -11,12 +11,6 @@
             --white: #dfced6;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark-purple);
-            line-height: 1.6;
-        }
-
         .game-container {
             display: flex;
             flex-direction: column;
@@ -26,40 +20,25 @@
 
         .color-box {
             background-color: rgba(255, 255, 255, 0.3);
-            color: var(--dark-purple);
             padding: 20px;
-            margin-top: 30px;
-            border-radius: 30px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        #canvas {
-            border-radius: 10px;
-            display: block;
-        }
-
-        .controls {
-            display: flex;
-            gap: 10px;
+            margin-top: 10px;
+            border-radius: 20px;
         }
 
         nav {
-            width: fit-content;
             border-radius: 20px;
             background-color: rgba(255, 255, 255, 0.5);
             display: flex;
             gap: 10px;
             padding: 10px;
-            margin: 10px;
         }
 
         .nav-btn{   
-            display: inline-block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             padding: 10px 25px;
             background-color: var(--purple);
             color: var(--white);
-            text-decoration: none;
             border-radius: 10px;
             font-weight: 500;
             font-size: 0.9rem;
@@ -77,15 +56,14 @@
 </head>
 <body>
     <div class="game-container">
-            <section class="color-box">
-                <canvas id="canvas"></canvas>
-            </section>
-                <nav class="controls">
-                    <a id="btnPlay" class="nav-btn">Lancer</a>
-                    <a id="btnRandom" class="nav-btn">Aléatoire</a>
-                    <a id="btnClear" class="nav-btn">Effacer</a>
-                </nav>
-        </div>
+        <section class="color-box">
+            <canvas id="canvas"></canvas>
+        </section>
+        <nav class="controls">
+            <a id="btnPlay" class="nav-btn">Lancer</a>
+            <a id="btnRandom" class="nav-btn">Aléatoire</a>
+            <a id="btnClear" class="nav-btn">Effacer</a>
+        </nav>
     </div>
 
     <script>
@@ -111,7 +89,7 @@
                 for (let c = 0; c < SIZE; c++) {
                     ctx.fillStyle = grid[r][c] ? '#CA3C66' : '#E8AABE';
                     ctx.fillRect(c * CELL, r * CELL, CELL, CELL);
-                    ctx.strokeStyle = "#E8AABE";
+                    ctx.strokeStyle = "#F4D6E0";
                     ctx.lineWidth = 2;
                     ctx.strokeRect(c * CELL, r * CELL, CELL, CELL);
                 }
