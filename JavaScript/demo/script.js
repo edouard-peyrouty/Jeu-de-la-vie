@@ -14,6 +14,22 @@ const game = createGameOfLife(canvas, {
     density: 0.28
 });
 
+const pulsar = [
+    [0,0,1,1,1,0,0,0,1,1,1,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [1,0,0,0,0,1,0,1,0,0,0,0,1],
+    [1,0,0,0,0,1,0,1,0,0,0,0,1],
+    [1,0,0,0,0,1,0,1,0,0,0,0,1],
+    [0,0,1,1,1,0,0,0,1,1,1,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,1,1,1,0,0,0,1,1,1,0,0],
+    [1,0,0,0,0,1,0,1,0,0,0,0,1],
+    [1,0,0,0,0,1,0,1,0,0,0,0,1],
+    [1,0,0,0,0,1,0,1,0,0,0,0,1],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,1,1,1,0,0,0,1,1,1,0,0],
+];
+
 btnPlay.addEventListener('click', function() {
     const isNowRunning = game.toggle();
     this.textContent = isNowRunning ? '⏸ Pause' : '▶ Lancer';
@@ -21,6 +37,8 @@ btnPlay.addEventListener('click', function() {
 });
 
 document.getElementById('btnRandom').addEventListener('click', () => game.randomize());
+
+document.getElementById('btnPulsar').addEventListener('click', () => game.setGrid(pulsar));
 
 document.getElementById('btnClear').addEventListener('click', () => {
     game.clear();

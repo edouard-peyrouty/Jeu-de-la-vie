@@ -36,10 +36,11 @@ Module JavaScript pour intégrer le Jeu de la Vie de Conway dans une page HTML.
 ## API
 
 ```js
-game.start()      // Démarre
-game.pause()      // Met en pause
-game.toggle()     // Démarre/pause, retourne true si en cours
-game.randomize()  // Remplit aléatoirement
-game.clear()      // Vide la grille
-game.isRunning()  // Retourne true si en cours
+game.start()            // Démarre
+game.pause()            // Met en pause
+game.toggle()           // Démarre/pause, retourne true si en cours
+game.randomize()        // Remplit aléatoirement
+game.clear()            // Vide la grille
+game.isRunning()        // Retourne true si en cours
+game.setGrid(pattern)   // Rempli la grille
 ```

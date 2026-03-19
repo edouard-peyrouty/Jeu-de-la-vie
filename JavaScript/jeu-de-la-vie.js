@@ -112,6 +112,18 @@ window.createGameOfLife = function(canvas, options = {}) {
             draw();
         }
     }
+    
+    // Helper pour centrer un pattern
+    function center(pattern) {
+        const pr = pattern.length, pc = pattern[0].length;
+        const or = Math.floor((ROWS - pr) / 2);
+        const oc = Math.floor((COLS - pc) / 2);
+        const g = newGrid();
+        for (let r = 0; r < pr; r++)
+            for (let c = 0; c < pc; c++)
+                g[or + r][oc + c] = pattern[r][c];
+        return g;
+    }
 
     if (CLICKABLE) {
         canvas.addEventListener('mousedown', e => { painting = true; toggleCell(e.clientX, e.clientY); });
@@ -150,6 +162,14 @@ window.createGameOfLife = function(canvas, options = {}) {
         },
         isRunning() {
             return running;
-        }
+        },
+        setGrid(pattern) {
+            pattern = center(pattern);
+            grid = newGrid();
+            for (let r = 0; r < pattern.length && r < ROWS; r++)
+                for (let c = 0; c < pattern[r].length && c < COLS; c++)
+                    grid[r][c] = pattern[r][c];
+            draw();
+        },
     };
 };
