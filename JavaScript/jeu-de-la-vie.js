@@ -20,7 +20,7 @@
  *   density       {number}  Densité de cellules vivantes pour randomize() 0-1 (défaut: 0.3)
  */
 
-window.createGameOfLife = function(canvas, options = {}) {
+export function createGameOfLife(canvas, options = {}) {
     
     const ROWS         = options.rows         ?? 30;
     const COLS         = options.cols         ?? ROWS;

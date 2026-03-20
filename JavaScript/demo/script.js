@@ -1,3 +1,5 @@
+import { createGameOfLife } from 'https://cdn.jsdelivr.net/gh/edouard-peyrouty/Jeu-de-la-vie@main/JavaScript/jeu-de-la-vie.js';
+
 const canvas = document.getElementById('canvas');
 const btnPlay = document.getElementById('btnPlay');
 

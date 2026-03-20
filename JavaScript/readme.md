@@ -6,8 +6,8 @@ Module JavaScript pour intégrer le Jeu de la Vie de Conway dans une page HTML.
 
 ```html
 <canvas id="canvas"></canvas>
-<script src="https://cdn.jsdelivr.net/gh/edouard-peyrouty/Jeu-de-la-vie@main/JavaScript/jeu-de-la-vie.js"></script>
 <script>
+    import { createGameOfLife } from 'https://cdn.jsdelivr.net/gh/edouard-peyrouty/Jeu-de-la-vie@main/JavaScript/jeu-de-la-vie.js';
     const game = createGameOfLife(document.getElementById('canvas'), {
         rows: 30,
         cell: 14
